@@ -1,0 +1,36 @@
+<script>
+  console.log('Pilha/Stack');
+  class BrowserHistoryStack {
+    constructor() {
+      this.cursor = 0;
+      this.data = [];
+    }
+
+    push(item) {
+      this.cursor++;
+      this.data.push(item);
+    }
+
+    back() {
+      // this.data.pop();
+      this.cursor--;
+    }
+
+    clear() {
+      this.data = [];
+    }
+
+    print() {
+      console.log('Itens atuais', this.cursor)
+      console.log(this.data);
+    }
+  }
+
+  const history = new BrowserHistoryStack();
+  history.push('https://google.com');
+  history.push('https://youtube.com');
+  history.push('https://facebook.com');
+  history.print();
+  history.back();
+  history.print();
+</script>

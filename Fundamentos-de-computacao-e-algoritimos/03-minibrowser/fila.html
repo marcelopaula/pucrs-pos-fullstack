@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script>
+    console.log('[Fila/Queue]');
+
+    // qualquer tipo de dado
+    // uma atrás da outra, ordem importa
+    // quem entra primeiro, sai primeiro
+
+    var fila = [
+      'script.js',
+      'style.css',
+      'imagem.png'
+    ];
+
+    // adiciona no final
+    fila.push('doguinho.jpg');
+
+    // remove o primeiro
+    fila.shift();
+
+    // receira para criar fila
+    // - enqueue: enfileirar
+    // - dequeue: desenfileirar
+
+    class Queue {
+      constructor() {
+        this.data = [];
+      }
+      print() {
+        console.log(this.data);
+      }
+      enqueue(item) {
+        this.data.push(item)
+      }
+      dequeue() {
+        this.data.shift();
+      }
+    }
+
+    // design do código first
+    var requests = new Queue();
+
+    // Open Closed
+    // Aberto para extensão
+    // Fechado para modificação
+    requests.enqueue('scripts.js');
+    requests.dequeue();
+    requests.enqueue('style.css');
+    requests.enqueue('imagem.png');
+    requests.enqueue('doguinho.jpg');
+    requests.print();
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
